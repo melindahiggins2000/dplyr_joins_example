@@ -383,8 +383,16 @@ head(adeliepenguins)</code></pre>
 adelie_gentoo &lt;- rbind(adeliepenguins,
                        gentoopenguins)
 
+adelie_rearrange &lt;- adeliepenguins %&gt;%
+  relocate(year, .before = species)
+
+adeliere_gentoo &lt;- rbind(adelie_rearrange,
+                         gentoopenguins)
+
+# suppose we add a new column to adelie
+
 adeliemod &lt;- adeliepenguins %&gt;%
-  mutate(bill_length_cm = bill_length_mm/100)
+  mutate(bill_length_cm = bill_length_mm/10)
 
 # let&#39;s try this again with
 # added column in adeliemod
@@ -468,7 +476,7 @@ names(adeliemod_gentoomod)</code></pre>
 <td align="right">3750</td>
 <td align="left">male</td>
 <td align="right">2007</td>
-<td align="right">0.391</td>
+<td align="right">3.91</td>
 <td align="right">NA</td>
 </tr>
 <tr class="even">
@@ -480,7 +488,7 @@ names(adeliemod_gentoomod)</code></pre>
 <td align="right">3800</td>
 <td align="left">female</td>
 <td align="right">2007</td>
-<td align="right">0.395</td>
+<td align="right">3.95</td>
 <td align="right">NA</td>
 </tr>
 <tr class="odd">
@@ -492,7 +500,7 @@ names(adeliemod_gentoomod)</code></pre>
 <td align="right">3250</td>
 <td align="left">female</td>
 <td align="right">2007</td>
-<td align="right">0.403</td>
+<td align="right">4.03</td>
 <td align="right">NA</td>
 </tr>
 <tr class="even">
@@ -516,7 +524,7 @@ names(adeliemod_gentoomod)</code></pre>
 <td align="right">3450</td>
 <td align="left">female</td>
 <td align="right">2007</td>
-<td align="right">0.367</td>
+<td align="right">3.67</td>
 <td align="right">NA</td>
 </tr>
 <tr class="even">
@@ -528,7 +536,7 @@ names(adeliemod_gentoomod)</code></pre>
 <td align="right">3650</td>
 <td align="left">male</td>
 <td align="right">2007</td>
-<td align="right">0.393</td>
+<td align="right">3.93</td>
 <td align="right">NA</td>
 </tr>
 </tbody>
